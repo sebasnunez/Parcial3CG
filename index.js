@@ -34,4 +34,6 @@ function empezar(){
    var player = document.querySelector("#player");
    player.setAttribute("position", "0 0 -1");
    player.setAttribute("sound", "src: #Fondo; autoplay: true");
+   var luz = document.querySelector("#luz");
+   luz.setAttribute("light", "intensity: 0.3");
 }
