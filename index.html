@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="./Resourses/Environment/icon_5f315913ebf83_5067_w256.webp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="//unpkg.com/aframe-extras@4.1.2/dist/aframe-extras.min.js"></script>
+    <script src="//unpkg.com/aframe-physics-system@3.1.2/dist/aframe-physics-system.min.js"></script>
+    <script src="./index.js"></script>
+    <title>LaberintoCG</title>
+</head>
+<body>
+    <a-scene light="defaultLightsEnabled: false" physics="restitution: 0;">
+        <!--Recursos-->
+        <a-assets>
+            <audio src="./Resourses/Sounds/yt1s.com - musica de fondo terror.mp3" id="menuTerror">
+            <img src="./Resourses/Environment/generatedtext.png" id="start">
+            <img src="./Resourses/Environment/bloody-wall-dark-horror-content-halloween-festival-60639259.jpg" id="Pared">
+            <img src="./Resourses/Environment/f42f8fcd0d9926c7107d2c13038bbf731b3c1a36.png" id="Piso">
+            <img src="./Resourses/Environment/FloorsRegular0196_2_download600.png" id="Techo">
+            <img src="./Resourses/Screams/maxresdefault.jpg" id="Screamer1">
+            <audio id = "A1" src="./Resourses/Sounds/y2mate.com_-_EFECTOS_DE_SONIDO_TERROR_CHILLIDO_GRITO_HOMBRE_SOUND_EFFECTS_TERROR_SCREAM_MAN_HORROR_3.mp3">
+            <audio id = "Fondo" src="./Resourses/Sounds/yt1s.com - Musica Ambiental Terror  Suspenso  Miedo  SIN COPIRIGHT  Libre de Derechos  Instrumental.mp3 - Musica Ambiental Terror  Suspenso  Miedo  SIN COPIRIGHT  Libre de Derechos  Instrumental.mp3">
+        </a-assets>
+
+        <!--Menu-->
+        <a-box src="#Pared" width="8" height="4" depth="1" position="0 1.5 81"  static-body></a-box>
+        <a-box src="#Pared" width="8" height="4" depth="1" position="0 1.5 72"  static-body></a-box>
+        <a-box src="#Pared" rotation="0 90 0" width="8" height="4" depth="1" position="4.5 1.5 76.5"  static-body></a-box>
+        <a-box src="#Pared" rotation="0 90 0" width="8" height="4" depth="1" position="-4.5 1.5 76.5"  static-body></a-box>
+        
+        <a-box onclick="empezar()" position="2 1.5 74" src="#start" depth="0.5"></a-box>
+        <a-plane position="-1 1.6 74" color="transparent" width="4" height="3" material="alphaTest:100;" text="font:./Resourses/Fonts/bloodlust-msdf.json; color:#950A07; wrapCount: 30; value: intenta llegar al final de este laberinto, la pasaras muy mal te lo aseguro, para iniciar a sufrir click o mira fijamente en 'empezar'.;"></a-plane>
+        
+        <!--Paredes-->
+        <a-box src="#Pared" width="10" height="4" depth="1" position="0 1.5 1"  static-body></a-box>
+        <a-box src="#Pared" width="10" height="4" depth="1" rotation="0 90 0" position="5 1.5 -4"  static-body></a-box>
+        <a-box src="#Pared" width="10" height="4" depth="1" rotation="0 90 0" position="-5 1.5 -4"  static-body></a-box>
+        <a-box src="#Pared" width="3" depth="4" height="4" depth="1" rotation="0 0 0" position="0 1.5 -11"  static-body></a-box>
+        <a-box src="#Pared" width="10" height="4" depth="1" rotation="0 0 0" position="0 1.5 -13.5"  static-body></a-box>
+        
+        <!--Piso y techo-->
+        <a-box src="#Techo" material= "repeat: 80 80;color:#fafafa;metalness:0.2;roughness:0.1;" color="grey" height="1" width="400" depth="400" static-body position="0 4 0"></a-box>
+        <a-box src="#Piso" rotation="0 90 0" material= "repeat: 200 200;color:#fafafa;metalness:0.2;roughness:0.1;" color="grey" height="1" width="400" depth="400" static-body position="0 -0.5 0"></a-box>
+        <a-entity light="type: ambient; color: #BBB; intensity: 0.3"></a-entity>
+        
+        <!-- Sistema de Teletransportacion -->
+        <a-entity id="blueTPSphere" static-movement geometry="primitive:sphere;radius:0.2" material="color:blue;roughness:1" position="-2 1.884 -5.2"></a-entity>    
+        <a-entity id="blueTPSphere" static-movement geometry="primitive:sphere;radius:0.2" material="color:blue;roughness:1" position="2 1.884 -5.2"></a-entity>    
+        <!--Triggers-->
+        <a-box id="trigger" static-body width="5" height="0.1" visible="false" position="0 0 -5"></a-box>
+
+        <!--Jugador-->
+        <a-entity id="player" position="0 0 80" collider movement-controls kinematic-body="radius: 0.5" sound="src: #menuTerror; autoplay: true">
+            <a-entity camera look-controls="pointerLockEnabled: true;" position="0 2.5 0">
+                <a-entity cursor position="0 0 -0.5" geometry="primitive:ring;radiusInner:0.01;radiusOuter:0.016" material="opacity:0.5;shader:flat;transparent:true;color:#ff9" scale="0.8 0.8 0.8" raycaster ></a-entity>
+                <a-plane visible="false" material="alphaTest:1;" position="0 0 -0.1"  height="1.5" width ="2" id="Scream" scale="0.1 0.1 0.1" sound="src: #"></a-plane>
+            </a-entity>
+          </a-entity>
+</a-scene>
+</body>
+</html>
