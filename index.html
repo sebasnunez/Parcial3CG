@@ -45,7 +45,7 @@
         <!--Piso y techo-->
         <a-box src="#Techo" material= "repeat: 80 80;color:#fafafa;metalness:0.2;roughness:0.1;" color="grey" height="1" width="400" depth="400" static-body position="0 4 0"></a-box>
         <a-box src="#Piso" rotation="0 90 0" material= "repeat: 200 200;color:#fafafa;metalness:0.2;roughness:0.1;" color="grey" height="1" width="400" depth="400" static-body position="0 -0.5 0"></a-box>
-        <a-entity light="type: ambient; color: #BBB; intensity: 0.1"></a-entity>
+        <a-entity id="luz" light="type: ambient; color: #BBB; intensity: 0.1"></a-entity>
         
         <!-- Sistema de Teletransportacion -->
         <a-entity id="blueTPSphere" static-movement geometry="primitive:sphere;radius:0.2" material="color:blue;roughness:1" position="-2 1.884 -5.2"></a-entity>    
