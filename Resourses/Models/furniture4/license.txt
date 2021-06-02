@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wooden Folding Chair
+* source:	https://sketchfab.com/3d-models/wooden-folding-chair-b843c63d853a4b788a6a6b1aad4b2c15
+* author:	FlukierJupiter (https://sketchfab.com/FlukierJupiter)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wooden Folding Chair" (https://sketchfab.com/3d-models/wooden-folding-chair-b843c63d853a4b788a6a6b1aad4b2c15) by FlukierJupiter (https://sketchfab.com/FlukierJupiter) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
