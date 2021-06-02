@@ -1,0 +1,11 @@
+Model Information:
+* title:	Total Horror
+* source:	https://sketchfab.com/3d-models/total-horror-5c9bbc12b9064dc0aa3f6a7f3b91755c
+* author:	Mysis The Cat (https://sketchfab.com/isaknordstrom1)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Total Horror" (https://sketchfab.com/3d-models/total-horror-5c9bbc12b9064dc0aa3f6a7f3b91755c) by Mysis The Cat (https://sketchfab.com/isaknordstrom1) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
